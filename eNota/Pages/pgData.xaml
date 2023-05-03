@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eNota.Pages.pgData"
+             x:Name="Data"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFF8F5">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition x:Name="dateHeight"/>
+            </Grid.RowDefinitions>
+
+            <ListView ItemsSource="{Binding lstNota, Mode=TwoWay}"
+                      RowHeight="150"
+                      SeparatorVisibility="None"
+                      Grid.Row="0"
+                      Margin="0,30,0,10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="20,5,20,5">
+                                <Frame CornerRadius="20">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="7*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Grid.Row="0" Grid.Column="0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="6*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Source="imgDate.png"
+                                                   Grid.Column="0"
+                                                   WidthRequest="10"
+                                                   HeightRequest="10"
+                                                   VerticalOptions="Center"/>
+
+                                            <Label Grid.Column="1"
+                                                   Text="{Binding strDate}"
+                                                   FontSize="Medium"
+                                                   VerticalOptions="Center"
+                                                   Margin="-5,0,0,0"/>
+                                        </Grid>
+
+                                        <Grid Grid.Row="1" Grid.Column="0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="6*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Source="imgItem.png"
+                                                   Grid.Column="0"
+                                                   WidthRequest="10"
+                                                   HeightRequest="10"
+                                                   VerticalOptions="Center"/>
+
+                                            <Label Grid.Column="1"
+                                                   Text="{Binding strBarang}"
+                                                   FontSize="Medium"
+                                                   VerticalOptions="Center"
+                                                   Margin="-5,-5,0,-5"/>
+                                        </Grid>
+
+                                        <Grid Grid.Row="0" Grid.Column="1" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="5*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Source="imgPrice.png"
+                                                   Grid.Column="0"
+                                                   WidthRequest="20"
+                                                   HeightRequest="20"
+                                                   VerticalOptions="Center"/>
+
+                                            <Label Grid.Column="1"
+                                                   Text="{Binding strHarga}"
+                                                   FontSize="Medium"
+                                                   VerticalOptions="Center"
+                                                   Margin="0,0,-10,0"/>
+                                        </Grid>
+
+                                        <Grid Grid.Row="1" Grid.Column="1" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="5*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Source="imgInterest.png"
+                                                   Grid.Column="0"
+                                                   WidthRequest="20"
+                                                   HeightRequest="20"
+                                                   VerticalOptions="Center"/>
+
+                                            <Label Grid.Column="1"
+                                                   Text="{Binding strLaba}"
+                                                   TextColor="{Binding strLabaColor}"
+                                                   FontSize="Medium"
+                                                   VerticalOptions="Center"
+                                                   Margin="0,0,-10,0"/>
+                                        </Grid>
+
+                                        <ImageButton Grid.Row="0"
+                                                 Grid.Column="2"
+                                                 Source="imgEdit"
+                                                 BackgroundColor="Transparent"
+                                                 Margin="2,2,5,2"
+                                                 Command="{Binding Path=BindingContext. comEdit, Source={x:Reference Name=Data}}"
+                                                 CommandParameter="{Binding intID}"/>
+
+                                        <ImageButton Grid.Row="1"
+                                                 Grid.Column="2"
+                                                 Source="imgDelete"
+                                                 BackgroundColor="Transparent"
+                                                 Margin="2,2,5,2"
+                                                 Command="{Binding Path=BindingContext. comDelete, Source={x:Reference Name=Data}}"
+                                                 CommandParameter="{Binding intID}"/>
+                                    </Grid>
+                                </Frame>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command ="{Binding Path=BindingContext. comDetail, Source={x:Reference Name=Data}}" CommandParameter="{Binding intID}"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="1" BackgroundColor="AliceBlue">
+                <Grid Margin="20,5,20,5" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="imgDate.png" 
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
+
+                    <Label Text="Start"
+                       Grid.Column="1"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+
+                    <DatePicker Grid.Column="2"
+                            Date="{Binding dtStart}"
+                            Format="dd MMM yyyy"
+                            VerticalOptions="Center"/>
+
+                    <Image Source="imgDate.png" 
+                       Grid.Column="4"
+                       VerticalOptions="Center"/>
+
+                    <Label Text="End"
+                       Grid.Column="5"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+
+                    <DatePicker Grid.Column="6"
+                            Date="{Binding dtEnd}"
+                            Format="dd MMM yyyy"
+                            VerticalOptions="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

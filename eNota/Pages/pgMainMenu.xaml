@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eNota.Pages.pgMainMenu"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="bgMenu.jpg">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2"/>
+            </Grid.RowDefinitions>
+
+            <!--<Label  Text="{Binding strTitle}"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" 
+                        Grid.Row="1"
+                        FontSize="Large"
+                        FontAttributes="Bold"/>-->
+
+            <Grid Grid.Row="2" Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                
+                <Button Text="Entry"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        WidthRequest="220"
+                        HeightRequest="80"
+                        ImageSource="imgEntry.png"
+                        Command="{Binding comEntry}"
+                        CornerRadius="20"/>
+
+                <Button Text="Sold"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        WidthRequest="220"
+                        HeightRequest="80"
+                        ImageSource="imgSold.png"
+                        Command="{Binding comSold}"
+                        CornerRadius="20"/>
+
+                <Button Text="Settings"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        WidthRequest="220"
+                        HeightRequest="80"
+                        ImageSource="imgSettings.png"
+                        Command="{Binding comSettings}"
+                        CornerRadius="20"/>
+
+                <Button Text="Stock"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        WidthRequest="220"
+                        HeightRequest="80"
+                        ImageSource="imgStock.png"
+                        Command="{Binding comStock}"
+                        CornerRadius="20"/>
+
+                <Button Text="About"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        WidthRequest="220"
+                        HeightRequest="80"
+                        ImageSource="imgAbout.png"
+                        Command="{Binding comAbout}"
+                        CornerRadius="20"/>
+
+                <!--<Button Text="Test"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        WidthRequest="220"
+                        HeightRequest="80"
+                        Command="{Binding comTest}"
+                        CornerRadius="20"/>-->
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

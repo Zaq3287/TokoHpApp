@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eNota.Pages.pgNota"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFF8F5">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="0" Margin="20,20,20,5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Tanggal"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <DatePicker Grid.Row="0"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                VerticalOptions="End"
+                                Margin="0,0,0,-5"
+                                Date="{Binding dtOrder}"
+                                Format="dd MMMM yyyy"/>
+
+                    <Label Text="Barang: "
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strBarang}"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                VerticalOptions="End"/>
+
+                    <Label Text="IMEI: "
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strIMEI}"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                VerticalOptions="End"/>
+
+                    <Label Text="Modal: "
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strModal}"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                VerticalOptions="End"
+                                Keyboard="Numeric"/>
+
+                    <Label Text="Jual: "
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strHarga}"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                VerticalOptions="End"
+                                Keyboard="Numeric"/>
+
+                    <Label Text="Bayar: "
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Picker ItemsSource="{Binding lstPayment}"
+                            SelectedItem="{Binding strPayment}" 
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="5"
+                            VerticalOptions="End"/>
+
+                    <Label Text="Mode: "
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Picker ItemsSource="{Binding lstMode}"
+                            SelectedItem="{Binding strMode}" 
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="6"
+                            VerticalOptions="End"/>
+
+                    <Label Text="Status: "
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Picker ItemsSource="{Binding lstStatus}"
+                            SelectedItem="{Binding strStatus}" 
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="7"
+                            VerticalOptions="End"/>
+
+                    <Label Text="Telephone: "
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strTelephone}"
+                                Grid.Row="8"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                VerticalOptions="End"
+                                Keyboard="Telephone"/>
+
+                    <Label Text="Garansi toko: "
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strGaransiToko}"
+                                Grid.Row="9"
+                                Grid.Column="1"
+                                VerticalOptions="End"
+                                Keyboard="Numeric"/>
+
+                    <Label Text="hari (New / Second)"
+                            Grid.Row="9"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+
+                    <Label Text="Garansi resmi: "
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            VerticalOptions="End"
+                            Margin="0,0,0,5"/>
+
+                    <Entry Text="{Binding strGaransiResmi}"
+                                Grid.Row="10"
+                                Grid.Column="1"
+                                VerticalOptions="End"
+                                Keyboard="Numeric"/>
+
+                    <Label Text="bulan (New)"
+                            Grid.Row="10"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+                </Grid>
+            </ScrollView>
+
+            <Grid Grid.Row="1" BackgroundColor="AliceBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <ImageButton Command="{Binding comClear}"
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    VerticalOptions="FillAndExpand"
+                                    Source="imgRefresh.png"
+                                    BackgroundColor="Transparent"/>
+
+                <Label Text="Clear"
+                            Grid.Column="0"
+                            Grid.Row="2"
+                            HorizontalTextAlignment="Center"/>
+
+                <ImageButton Command="{Binding comSave}"
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    VerticalOptions="FillAndExpand"
+                                    Source="imgSave.png"
+                                    BackgroundColor="Transparent"/>
+
+                <Label Text="Save"
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            HorizontalTextAlignment="Center"/>
+
+                <ImageButton Command="{Binding comPrint}"
+                                    Grid.Column="2"
+                                    Grid.Row="1"
+                                    VerticalOptions="FillAndExpand"
+                                    Source="imgPrint.png"
+                                    BackgroundColor="Transparent"/>
+
+                <Label Text="Print"
+                            Grid.Column="2"
+                            Grid.Row="2"
+                            HorizontalTextAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

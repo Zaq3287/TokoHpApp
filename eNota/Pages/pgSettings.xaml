@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eNota.Pages.pgSettings"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFF8F5">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="0" Margin="20,20,20,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Name:"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+
+                    <Entry  Text="{Binding strName}"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="End"/>
+
+                    <Label Text="Address:"
+                            Grid.Column="0"
+                            Grid.Row="2"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+
+                    <Entry  Text="{Binding strAddress}"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="End"/>
+
+                    <Label Text="City:"
+                            Grid.Column="0"
+                            Grid.Row="4"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+
+                    <Entry  Text="{Binding strCity}"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="End"/>
+
+                    <Label Text="Telephone:"
+                            Grid.Column="0"
+                            Grid.Row="6"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+
+                    <Entry  Text="{Binding strTelephone}"
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="End"
+                            Keyboard="Telephone"/>
+
+                    <Label Text="Bluetooth printer:"
+                            Grid.Column="0"
+                            Grid.Row="8"
+                            VerticalOptions="End"
+                            Margin="10,0,0,5"/>
+
+                    <Picker ItemsSource="{Binding lstDevice}"
+                            SelectedItem="{Binding strDevice}" 
+                            Grid.Column="1"
+                            Grid.Row="8"/>
+
+                    <ImageButton Source="imgRefresh.png"
+                                    Grid.Column="2"
+                                    Grid.Row="8"
+                                    VerticalOptions="FillAndExpand"
+                                    Command="{Binding comRefresh}"
+                                    BackgroundColor="Transparent"/>
+                </Grid>
+            </ScrollView>
+
+            <Grid Grid.Row="1" BackgroundColor="AliceBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <ImageButton Source="imgSave.png"
+                                VerticalOptions="FillAndExpand"
+                                Grid.Column="0"
+                                Grid.Row="1"
+                                Command="{Binding comSave}"
+                                BackgroundColor="Transparent"/>
+
+                <Label Text="Save"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        HorizontalTextAlignment="Center"/>
+
+                <ImageButton Source="imgBackup.png"
+                                VerticalOptions="FillAndExpand"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Command="{Binding comBackup}"
+                                BackgroundColor="Transparent"/>
+
+                <Label Text="Backup"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        HorizontalTextAlignment="Center"/>
+
+                <ImageButton Source="imgRestore.png"
+                                VerticalOptions="FillAndExpand"
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                Command="{Binding comRestore}"
+                                BackgroundColor="Transparent"/>
+
+                <Label Text="Restore"
+                        Grid.Column="2"
+                        Grid.Row="2"
+                        HorizontalTextAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
